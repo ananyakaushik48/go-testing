@@ -14,7 +14,7 @@ func TestState(t *testing.T) {
 		wg.Add(1)
 		// doing work and keeping track of the task in waitgrp
 		go func(i int) {
-			state.count = i + 1
+			state.setState(i + 1)
 			wg.Done() // done working updating state on waitgrp
 		}(i)
 	}
